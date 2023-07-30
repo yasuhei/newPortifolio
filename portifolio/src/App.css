@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active-link {
+    color: #594a3c; /* Cor para o link ativo, pode ser qualquer cor desejada */
+    font-weight: bold; /* Para enfatizar o link ativo, opcional */
+  }
