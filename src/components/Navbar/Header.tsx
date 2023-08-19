@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 
 export function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -7,13 +6,20 @@ export function Header() {
   const toggleMenu = () => {
     setMenuOpen((prevState) => !prevState);
   };
+
+  // Render only the menu with the SVG icon
   return (
     <>
-      <nav className="bg-[#1c1917] p-4">
-        <div className="container mx-auto">
+      <nav className="bg-[#1a1a1a] ">
+        <div className=" w-full  mx-auto fixed p-4">
           <div className="flex justify-between items-center">
-            <div className="text-[#594a3c] font-bold text-lg">Meu Site</div>
-            <div className="sm:hidden">
+            <a
+              className="text-[#594a3c] font-bold text-lg cursor-pointer"
+              href="#"
+            >
+              {"< Yasuhei />"}
+            </a>
+            <div className="">
               <button
                 type="button"
                 className="text-white focus:outline-none focus:text-white"
@@ -32,9 +38,9 @@ export function Header() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       className="text-[#594a3c]"
                     >
                       <path d="M18 6 6 18" />
@@ -51,42 +57,34 @@ export function Header() {
                 </svg>
               </button>
             </div>
-            <div className="hidden sm:flex space-x-4">
-              <NavLink
-                exact
-                to="/"
-                activeClassName="active-link"
-                className="text-white hover:text-[#594a3c]"
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/link"
-                activeClassName="active-link"
-                className="text-white"
-              >
-                Sobre
-              </NavLink>
-              <NavLink
-                to="/dd"
-                activeClassName="active-link"
-                className="text-white"
-              >
-                Contato
-              </NavLink>
-            </div>
           </div>
         </div>
         {isMenuOpen && (
-          <div className="sm:hidden">
-            <a href="#" className="block text-white p-2 text-[#594a3c] ">
-              Home
+          <div className="pt-10 absolute px-7 ">
+            <a
+              href="#"
+              className="block text-gray-400 p-2  hover:text-[#594a3c]"
+            >
+              {`<Home />`}
             </a>
-            <a href="/link" className="block text-white p-2 text-[#594a3c]">
-              Sobre
+            <a
+              href="/projetos"
+              className="block text-gray-400 p-2 hover:text-[#594a3c]"
+            >
+              {`<Projetos />`}
             </a>
-            <a href="/k" className="block text-white p-2 text-[#594a3c]">
-              Contato
+            <a
+              href="/link"
+              className="block text-gray-400 p-2 hover:text-[#594a3c]"
+            >
+              {`<Sobre />`}
+            </a>
+
+            <a
+              href="/k"
+              className="block text-gray-400 p-2 hover:text-[#594a3c]"
+            >
+              {`<Contato />`}
             </a>
           </div>
         )}
