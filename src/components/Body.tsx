@@ -32,35 +32,34 @@ export function Body() {
   return (
     <>
       <Header />
-      <main>
-        <div className="h-screen bg-[#1a1a1a] flex justify-center items-center  overflow-hidden ">
-          <div>
-            <motion.h1
-              className="text-7xl text-white "
-              variants={textVariants}
+      <main className="h-screen bg-[#1a1a1a] flex justify-around items-center  overflow-hidden flex-col">
+        <div className="flex justify-center items-center flex-col h-full ">
+          <motion.h1
+            className="text-7xl text-white "
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            I'm a <span className="text-[#594a3c]"> frontend developer</span>
+          </motion.h1>
+
+          <div className="  flex justify-start items-start w-full pt-10">
+            <motion.h2
+              className="items-center justify-center text-white"
+              variants={textVariantsH2}
               initial="hidden"
               animate="visible"
             >
-              I'm a <span className="text-[#594a3c]"> frontend developer</span>
-            </motion.h1>
-
-            <div className="  flex justify-start items-center  pt-48 pb-20">
-              <motion.h2
-                className="items-center justify-center text-white"
-                variants={textVariantsH2}
-                initial="hidden"
-                animate="visible"
-              >
-                Hello, I'm
-                <span className="text-[#594a3c]">
-                  {" "}
-                  Yasuhei Nakamura
-                </span> <br /> Front-end Developer based in Campinas-SP Brazil
-              </motion.h2>
-            </div>
-            <Itens />
+              Hi, I'm
+              <span className="text-[#594a3c] font-bold">
+                {" "}
+                Yasuhei Nakamura
+              </span>{" "}
+              <br /> Front-end Developer based in Campinas-SP Brazil
+            </motion.h2>
           </div>
         </div>
+        <Itens />
       </main>
     </>
   );

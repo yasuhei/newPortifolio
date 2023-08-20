@@ -68,16 +68,16 @@ export function Header() {
               {`<Home />`}
             </a>
             <a
-              href="/projetos"
-              className="block text-gray-400 p-2 hover:text-[#594a3c]"
-            >
-              {`<Projetos />`}
-            </a>
-            <a
               href="/link"
               className="block text-gray-400 p-2 hover:text-[#594a3c]"
             >
               {`<Sobre />`}
+            </a>
+            <a
+              href="/projetos"
+              className="block text-gray-400 p-2 hover:text-[#594a3c]"
+            >
+              {`<Projetos />`}
             </a>
 
             <a
